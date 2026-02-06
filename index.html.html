@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/krish/OneDrive/Desktop/rose.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Rose Day 🌹</title>
+
+<link href="./Rose Day 🌹_files/css2" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  font-family:'Playfair Display',serif;
+  background:radial-gradient(circle at top,#2b0014,#000);
+  color:#fff;
+}
+
+/* 🌸 Background Falling */
+.bg-flower{
+  position:fixed;
+  top:-10%;
+  animation:fall linear infinite;
+  opacity:0.4;
+}
+@keyframes fall{
+  to{transform:translateY(120vh) rotate(360deg);}
+}
+
+/* 🎬 Front */
+#front{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.title{
+  font-family:'Great Vibes',cursive;
+  font-size:3.8em;
+  color:#ffb6c1;
+  text-shadow:0 0 40px rgba(255,182,193,0.9);
+}
+
+/* 💌 Popup */
+#popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+.popup-box{
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(16px);
+  border-radius:26px;
+  padding:40px;
+  max-width:650px;
+  text-align:center;
+  box-shadow:0 0 55px rgba(255,182,193,0.8);
+}
+.popup-box h2{
+  font-family:'Great Vibes',cursive;
+  font-size:3em;
+  color:#ffd1dc;
+}
+.popup-box p{margin-top:15px;line-height:1.9}
+
+button{
+  margin-top:22px;
+  padding:14px 36px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(45deg,#b0003a,#ff4f7b);
+  color:#fff;
+  font-size:1em;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,80,120,0.9);
+}
+
+/* 🌹 CINEMATIC ROSE SCENE */
+#roseScene{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#16000b,#000);
+  z-index:20;
+  perspective:1400px;
+  overflow:hidden;
+}
+
+/* Camera */
+.camera{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:zoomIn 6s ease forwards;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.75)}
+  to{transform:scale(1.15)}
+}
+
+/* Rose Core */
+.rose{
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotateX(25deg);
+  animation:slowRotate 10s linear infinite;
+}
+
+@keyframes slowRotate{
+  from{transform:rotateX(25deg) rotateY(0deg)}
+  to{transform:rotateX(25deg) rotateY(360deg)}
+}
+
+/* 🌹 REALISTIC PETALS */
+.petal{
+  position:absolute;
+  width:130px;
+  height:180px;
+  background:
+    radial-gradient(circle at 30% 20%, #ffb3c1, #b0003a 70%),
+    linear-gradient(135deg,#ff6f91,#7a001f);
+  border-radius:60% 60% 80% 80%;
+  transform-origin:bottom center;
+  opacity:0;
+  box-shadow:
+    inset 0 0 15px rgba(255,255,255,0.4),
+    inset 0 -25px 40px rgba(120,0,30,0.7),
+    0 0 25px rgba(255,80,120,0.8);
+  animation:openPetal 2.2s forwards;
+}
+
+@keyframes openPetal{
+  from{
+    transform:rotateX(95deg) translateZ(0);
+    opacity:0;
+  }
+  to{
+    transform:rotateX(0deg) translateZ(90px);
+    opacity:1;
+  }
+}
+
+/* 🌸 Falling Rose Petals */
+.falling-petal{
+  position:absolute;
+  width:40px;
+  height:55px;
+  background:radial-gradient(circle at top,#ff9aa2,#a00032);
+  border-radius:60% 60% 80% 80%;
+  animation:petalFall 6s linear forwards;
+  opacity:0.9;
+}
+
+@keyframes petalFall{
+  to{
+    transform:translateY(120vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* 💖 Letter */
+#letter{
+  display:none;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+.letter-box{
+  max-width:850px;
+  padding:55px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(16px);
+  border-radius:32px;
+  box-shadow:0 0 70px rgba(255,182,193,0.9);
+}
+.letter-box h1{
+  font-family:'Great Vibes',cursive;
+  font-size:3.5em;
+  color:#ffb6c1;
+}
+.letter-box p{
+  margin-top:22px;
+  font-size:1.18em;
+  line-height:2;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌸 Front -->
+<div id="front">
+  <div class="title">
+    Happy Rose Day 🌹<br>
+    My Forever Bloom
+  </div>
+</div>
+
+<!-- 💌 Popup -->
+<div id="popup" style="display: flex;">
+  <div class="popup-box">
+    <h2>My White Rose 🤍</h2>
+    <p>
+      Like a white rose, your presence is pure,
+      calming, and endlessly beautiful.
+      <br><br>
+      Will you accept my rose today?
+    </p>
+    <button onclick="startRose()">Yes ❤️</button>
+    <button onclick="startRose()">Definitely Yes 💖</button>
+  </div>
+</div>
+
+<!-- 🌹 Rose Scene -->
+<div id="roseScene">
+  <div class="camera">
+    <div class="rose" id="rose"></div>
+  </div>
+</div>
+
+<!-- 💖 Letter -->
+<div id="letter">
+  <div class="letter-box">
+    <h1>For You dear sweetheart 🌹</h1>
+    <p>
+      Just like this rose opened petal by petal,
+      my heart unfolded for you naturally.
+      <br>
+      You are not just a part of my life,
+      you are the warmth that gives it meaning.
+      <br>
+      your are the perfect rose of my life that
+      blooms every time i meet you , i promise to 
+      protect you like the  thrones protects ther rose 💖
+      <br> 
+      Happy Rose Day, my forever.
+    </p>
+  </div>
+</div>
+
+<script>
+// 🌸 Background falling
+setInterval(()=>{
+  const f=document.createElement("div");
+  f.className="bg-flower";
+  f.innerText="🌸";
+  f.style.left=Math.random()*100+"vw";
+  f.style.fontSize=18+Math.random()*20+"px";
+  f.style.animationDuration=10+Math.random()*10+"s";
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),20000);
+},600);
+
+// Popup delay
+setTimeout(()=>popup.style.display="flex",3500);
+
+// 🌹 Rose Build
+function startRose(){
+  popup.style.display="none";
+  roseScene.style.display="block";
+
+  const rose=document.getElementById("rose");
+  rose.innerHTML="";
+
+  for(let i=0;i<12;i++){
+    const petal=document.createElement("div");
+    petal.className="petal";
+    petal.style.transform=`rotateY(${i*30}deg) translateZ(60px)`;
+    petal.style.animationDelay=(i*0.25)+"s";
+    rose.appendChild(petal);
+  }
+
+  // Falling petals
+  setTimeout(()=>{
+    for(let i=0;i<25;i++){
+      const p=document.createElement("div");
+      p.className="falling-petal";
+      p.style.left=Math.random()*100+"vw";
+      p.style.top="-10vh";
+      p.style.animationDuration=5+Math.random()*4+"s";
+      document.getElementById("roseScene").appendChild(p);
+      setTimeout(()=>p.remove(),9000);
+    }
+  },3000);
+
+  setTimeout(()=>{
+    roseScene.style.display="none";
+    front.style.display="none";
+    letter.style.display="flex";
+  },6500);
+}
+</script>
+
+
+
+<div class="bg-flower" style="left: 42.5426vw; font-size: 23.2594px; animation-duration: 19.917s;">🌸</div><div class="bg-flower" style="left: 57.9901vw; font-size: 26.6712px; animation-duration: 13.9415s;">🌸</div><div class="bg-flower" style="left: 3.64353vw; font-size: 19.7322px; animation-duration: 14.1602s;">🌸</div><div class="bg-flower" style="left: 61.267vw; font-size: 18.7222px; animation-duration: 18.3418s;">🌸</div><div class="bg-flower" style="left: 93.9231vw; font-size: 30.3161px; animation-duration: 12.7952s;">🌸</div><div class="bg-flower" style="left: 53.4106vw; font-size: 26.8848px; animation-duration: 14.2895s;">🌸</div><div class="bg-flower" style="left: 99.8691vw; font-size: 33.5891px; animation-duration: 14.4044s;">🌸</div><div class="bg-flower" style="left: 23.66vw; font-size: 26.889px; animation-duration: 15.8226s;">🌸</div><div class="bg-flower" style="left: 9.03141vw; font-size: 25.0885px; animation-duration: 17.9114s;">🌸</div><div class="bg-flower" style="left: 44.9885vw; font-size: 35.2659px; animation-duration: 19.9365s;">🌸</div><div class="bg-flower" style="left: 15.3557vw; font-size: 20.3959px; animation-duration: 17.6959s;">🌸</div><div class="bg-flower" style="left: 40.5752vw; font-size: 37.2532px; animation-duration: 13.9118s;">🌸</div><div class="bg-flower" style="left: 84.6677vw; font-size: 35.8635px; animation-duration: 18.8661s;">🌸</div><div class="bg-flower" style="left: 21.1447vw; font-size: 18.6706px; animation-duration: 12.2634s;">🌸</div><div class="bg-flower" style="left: 94.7169vw; font-size: 32.4918px; animation-duration: 12.9972s;">🌸</div><div class="bg-flower" style="left: 31.0461vw; font-size: 31.6673px; animation-duration: 11.631s;">🌸</div><div class="bg-flower" style="left: 28.5844vw; font-size: 37.5699px; animation-duration: 14.6511s;">🌸</div><div class="bg-flower" style="left: 91.6364vw; font-size: 33.6839px; animation-duration: 11.0198s;">🌸</div><div class="bg-flower" style="left: 33.5053vw; font-size: 31.4948px; animation-duration: 18.5132s;">🌸</div><div class="bg-flower" style="left: 68.7698vw; font-size: 28.4437px; animation-duration: 17.616s;">🌸</div><div class="bg-flower" style="left: 13.4966vw; font-size: 37.1924px; animation-duration: 13.3934s;">🌸</div><div class="bg-flower" style="left: 34.9639vw; font-size: 31.6584px; animation-duration: 10.5621s;">🌸</div><div class="bg-flower" style="left: 4.37075vw; font-size: 22.0504px; animation-duration: 18.7898s;">🌸</div><div class="bg-flower" style="left: 93.5445vw; font-size: 25.9688px; animation-duration: 15.2768s;">🌸</div><div class="bg-flower" style="left: 78.7812vw; font-size: 27.8376px; animation-duration: 13.5372s;">🌸</div><div class="bg-flower" style="left: 22.3748vw; font-size: 24.6876px; animation-duration: 14.9669s;">🌸</div></body></html>
